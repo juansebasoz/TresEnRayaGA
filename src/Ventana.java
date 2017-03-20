@@ -3,12 +3,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class Ventana extends JFrame implements VentanaInterface {
 
 	private JPanel contentPane;
+	private JTextField txtTexto;
 
 	/**
 	 * Launch the application.
@@ -31,10 +34,19 @@ public class Ventana extends JFrame implements VentanaInterface {
 		JButton btnOk = new JButton("OK");
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Hola Mundo!!");
+				txtTexto.setText("Hola Mundo!!");
 			}
 		});
 		btnOk.setBounds(164, 107, 89, 23);
 		contentPane.add(btnOk);
+
+		JLabel lblTexto = new JLabel("Texto");
+		lblTexto.setBounds(10, 11, 46, 14);
+		contentPane.add(lblTexto);
+
+		txtTexto = new JTextField();
+		txtTexto.setBounds(66, 8, 86, 20);
+		contentPane.add(txtTexto);
+		txtTexto.setColumns(10);
 	}
 }
