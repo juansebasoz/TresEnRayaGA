@@ -30,12 +30,13 @@ public class Graficos extends JPanel implements FichaInterface {
 		g2d.drawLine(0, 2 * y / 3, x, 2 * y / 3);
 		////////////////////////////////////////
 
-		// funcion que calcula diametro en funcion del eje X
-		int diametro = x * (x / 2 - x / 3) / x;
+		// funcion que calcula diametro en funcion del eje X y del eje Y
+		int diametro = (x * ((x / 2 - x / 3) + (2 * (y / 2 - y / 3))) / 2) / x;
 		// funcion para calcular el radio
 		int radio = diametro / 2;
 		g2d.setColor(Color.RED);
 		g2d.drawOval((x / 2) - radio, (y / 2) - radio, diametro, diametro);
+
 	}
 
 	@Override
